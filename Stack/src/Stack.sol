@@ -22,4 +22,28 @@ contract Stack {
     }
 
     // your code here
+
+    function push(uint _num) public {
+        stack.push(_num);
+    }
+
+    function peek() public view returns (uint){
+        require(stack.length > 0);
+        return stack[stack.length - 1];
+    }
+
+    function pop() public returns (uint256) {
+        require(stack.length > 0);
+        uint t = peek();
+        stack.pop();
+        return t;
+    }
+
+    function size() public view returns (uint) {
+        return stack.length;
+    }
+
+    function getStack() public view returns (uint[] memory) {
+        return stack;
+    }
 }

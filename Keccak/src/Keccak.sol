@@ -7,6 +7,10 @@ contract Keccak {
      */
 
     function keccak(uint256 x) external pure returns (bytes32) {
+        // emit Logger(abi.encode(x));
         // your code here
+        return keccak256(abi.encodePacked(x));
     }
+
+    event Logger(bytes);
 }

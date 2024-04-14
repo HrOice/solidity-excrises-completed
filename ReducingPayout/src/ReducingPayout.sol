@@ -19,5 +19,7 @@ contract ReducingPayout {
 
     function withdraw() public {
         // your code here
+        uint p = (depositedTime + 1 days) > block.timestamp ? 1 ether - (block.timestamp * 0.000011574 ether)  : 0;
+        payable(msg.sender).transfer(p );
     }
 }
